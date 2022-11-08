@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { appActions } from "../store";
 
 const Form = () => {
+	const dispatch = useDispatch();
+	const songSelected = useSelector((state) => {
+		return state.songTitle;
+	});
+	const videoURL = useSelector((state) => {
+		return state.videoSource;
+	});
+
+	const onChangeHandler = (event) => {
+		// console.log(event.target.value);
+		dispatch(appActions.setSong(event.target.value));
+	};
+
+	const submitHandler = (event) => {
+		event.preventDefault();
+		dispatch(appActions.setVideoSource());
+	};
+
+	useEffect(() => {
+		console.log("song", songSelected);
+		console.log("video", videoURL);
+	}, [songSelected, videoURL]);
+
 	return (
-		<form>
-			<label for="song-select">Choose a feeling:</label>
+		<form onChange={onChangeHandler}>
+			<label htmlFor="song-select">Choose a feeling:</label>
 
 			<select name="songs" id="song-select">
 				<option value="">Please choose an option</option>
@@ -22,7 +47,7 @@ const Form = () => {
 				<option value="Good As Hell">Good as hell</option>
 				<option value="Batches & Cookies">Gooey</option>
 			</select>
-			<button>Submit</button>
+			<button onClick={submitHandler}>Submit</button>
 		</form>
 	);
 };
