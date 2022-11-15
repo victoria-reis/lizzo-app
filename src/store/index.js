@@ -69,6 +69,12 @@ const appSlice = createSlice({
 				}
 			});
 		},
+		setShowModal: (state) => {
+			state.showModal = !state.showModal;
+		},
+		clearVideoSource: (state) => {
+			state.videoSource = undefined;
+		},
 	},
 });
 

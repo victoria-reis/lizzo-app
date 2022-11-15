@@ -1,7 +1,9 @@
 import React from "react";
+import "./index.css";
 
 import Form from "./components/Form";
 import VideoContainer from "./components/VideoContainer";
+import Modal from "./components/Modal";
 
 const App = () => {
 	return (
@@ -11,6 +13,7 @@ const App = () => {
 			</div>
 			<Form />
 			<VideoContainer />
+			<Modal />
 		</>
 	);
 };

@@ -18,12 +18,17 @@ const Form = () => {
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-		dispatch(appActions.setVideoSource());
+		if (!songSelected) {
+			dispatch(appActions.setShowModal());
+			dispatch(appActions.clearVideoSource());
+		} else {
+			dispatch(appActions.setVideoSource());
+		}
 	};
 
 	useEffect(() => {
 		console.log("song", songSelected);
-		console.log("video", videoURL);
+		// console.log("video", videoURL);
 	}, [songSelected, videoURL]);
 
 	return (
