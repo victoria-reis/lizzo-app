@@ -1,7 +1,17 @@
 import React from "react";
 
 const Footer = () => {
-	return <footer> Made with ❤️ by Victoria Reis</footer>;
+	return (
+		<footer>
+			<p className="wrapper footerText">
+				Made with <span role="img">❤️</span> by Victoria Reis
+			</p>
+			<p className="wrapper footerText">
+				Illustration by{" "}
+				<a href="https://dribbble.com/britteds">Britt Edwards</a>
+			</p>
+		</footer>
+	);
 };
 
 export default Footer;
