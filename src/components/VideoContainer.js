@@ -10,12 +10,16 @@ const VideoContainer = () => {
 		return state.songTitle;
 	});
 
+	const showTitle = useSelector((state) => {
+		return state.showTitle;
+	});
+
 	return (
 		<>
-			{videoURL !== undefined && <h2>{songTitle}</h2>}
+			{showTitle && <h2>{songTitle}</h2>}
 			<iframe
-				width="560"
-				height="315"
+				width="860"
+				height="483.75"
 				src={videoURL}
 				title="YouTube video player"
 				frameBorder="0"

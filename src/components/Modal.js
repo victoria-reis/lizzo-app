@@ -17,8 +17,8 @@ const ModalOverlay = (props) => {
 	return (
 		<>
 			{props.modalState && (
-				<div>
-					<p>Please select a valid value!</p>
+				<div className="modal">
+					<p>Please select a valid value.</p>
 					<button className="ok" onClick={props.onClose}>
 						OK
 					</button>

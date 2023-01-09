@@ -57,6 +57,7 @@ const appSlice = createSlice({
 		songTitle: undefined,
 		videoSource: undefined,
 		showModal: false,
+		showTitle: false,
 	},
 	reducers: {
 		setSong: (state, action) => {
@@ -74,6 +75,9 @@ const appSlice = createSlice({
 		},
 		clearVideoSource: (state) => {
 			state.videoSource = undefined;
+		},
+		setShowTitle: (state, action) => {
+			state.showTitle = action.payload;
 		},
 	},
 });

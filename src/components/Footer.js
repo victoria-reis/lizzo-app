@@ -4,7 +4,11 @@ const Footer = () => {
 	return (
 		<footer>
 			<p className="wrapper footerText">
-				Made with <span role="img">❤️</span> by Victoria Reis
+				Made with{" "}
+				<span role="img" aria-label="love">
+					❤️
+				</span>{" "}
+				by Victoria Reis
 			</p>
 			<p className="wrapper footerText">
 				Illustration by{" "}
