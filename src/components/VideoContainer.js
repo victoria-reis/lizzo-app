@@ -16,16 +16,19 @@ const VideoContainer = () => {
 
 	return (
 		<>
-			{showTitle && <h2>{songTitle}</h2>}
-			<iframe
-				width="860"
-				height="483.75"
-				src={videoURL}
-				title="YouTube video player"
-				frameBorder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowFullScreen
-			></iframe>
+			{showTitle ? (
+				<>
+					<h2>{songTitle}</h2>{" "}
+					<iframe
+						src={videoURL}
+						title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+					></iframe>
+				</>
+			) : (
+				<p className="selectMessage">Select an option above!</p>
+			)}
 		</>
 	);
 };

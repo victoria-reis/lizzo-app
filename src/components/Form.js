@@ -1,21 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { appActions } from "../store";
 
 const Form = () => {
 	const dispatch = useDispatch();
+
 	const songSelected = useSelector((state) => {
 		return state.songTitle;
 	});
-	const videoURL = useSelector((state) => {
-		return state.videoSource;
-	});
+
 	const showTitle = useSelector((state) => {
 		return state.showTitle;
 	});
 
 	const onChangeHandler = (event) => {
-		// console.log(event.target.value);
 		dispatch(appActions.setShowTitle(false));
 		dispatch(appActions.setSong(event.target.value));
 	};
@@ -32,11 +30,6 @@ const Form = () => {
 		}
 	};
 
-	useEffect(() => {
-		console.log("song", songSelected);
-		// console.log("video", videoURL);
-	}, [songSelected, videoURL]);
-
 	return (
 		<div className="formContainer">
 			<form
@@ -46,7 +39,7 @@ const Form = () => {
 				<label htmlFor="song-select">Choose a feeling:</label>
 
 				<select name="songs" id="song-select">
-					<option value="">Please choose an option</option>
+					<option value="">I'm feeling...</option>
 					<option value="2 Be Loved">Ready to be loved</option>
 					<option value="About Damn Time">
 						Way too fine to be this stressed
@@ -58,7 +51,7 @@ const Form = () => {
 					<option value="Boys">Into boys</option>
 					<option value="Fitness">Fit</option>
 					<option value="Truth Hurts">100% that b*tch</option>
-					<option value="Scuse Me">Feeling myself</option>
+					<option value="Scuse Me">Myself</option>
 					<option value="Good As Hell">Good as hell</option>
 					<option value="Batches & Cookies">Gooey</option>
 				</select>
