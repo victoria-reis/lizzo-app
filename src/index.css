@@ -363,7 +363,7 @@ footer {
 
 @media (max-width: 1570px) {
 	header {
-		background-size: 45%;
+		background-size: 47%;
 		background-position: bottom;
 		background-position: left;
 		height: 40vw;
@@ -418,6 +418,10 @@ footer {
 
 	h2 {
 		font-size: 2rem;
+	}
+
+	header {
+		background-size: 45%;
 	}
 
 	form {
