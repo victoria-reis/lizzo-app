@@ -5,7 +5,7 @@ const Footer = () => {
 		<footer>
 			<p className="wrapper footerText">
 				Made with{" "}
-				<span role="img" aria-label="love">
+				<span role="img" aria-label="heart emoji">
 					❤️
 				</span>{" "}
 				by Victoria Reis

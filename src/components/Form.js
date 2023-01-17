@@ -38,22 +38,44 @@ const Form = () => {
 			>
 				<label htmlFor="song-select">Choose a feeling:</label>
 
-				<select name="songs" id="song-select">
+				<select name="songs" id="song-select" data-testid="song-select">
 					<option value="">I'm feeling...</option>
-					<option value="2 Be Loved">Ready to be loved</option>
-					<option value="About Damn Time">
+					<option value="2 Be Loved" label="2 Be Loved">
+						Ready to be loved
+					</option>
+					<option value="About Damn Time" label="About Damn Time">
 						Way too fine to be this stressed
 					</option>
-					<option value="Rumors">Like the rumors are true</option>
-					<option value="Tempo">Like I need tempo</option>
-					<option value="Cuz I Love You">Crying because I love you</option>
-					<option value="Juice">Juicy</option>
-					<option value="Boys">Into boys</option>
-					<option value="Fitness">Fit</option>
-					<option value="Truth Hurts">100% that b*tch</option>
-					<option value="Scuse Me">Myself</option>
-					<option value="Good As Hell">Good as hell</option>
-					<option value="Batches & Cookies">Gooey</option>
+					<option value="Rumors" label="Rumors">
+						Like the rumors are true
+					</option>
+					<option value="Tempo" label="Tempo">
+						Like I need tempo
+					</option>
+					<option value="Cuz I Love You" label="Cuz I Love You">
+						Crying because I love you
+					</option>
+					<option value="Juice" label="Juice">
+						Juicy
+					</option>
+					<option value="Boys" label="Boys">
+						Into boys
+					</option>
+					<option value="Fitness" label="Fitness">
+						Fit
+					</option>
+					<option value="Truth Hurts" label="Truth Hurts">
+						100% that b*tch
+					</option>
+					<option value="Scuse Me" label="Scuse Me">
+						Myself
+					</option>
+					<option value="Good As Hell" label="Good As Hell">
+						Good as hell
+					</option>
+					<option value="Batches & Cookies" label="Batches & Cookies">
+						Gooey
+					</option>
 				</select>
 				<button onClick={submitHandler}>Submit</button>
 			</form>

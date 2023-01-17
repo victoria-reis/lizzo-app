@@ -6,9 +6,7 @@ import { appActions } from "../store";
 const ModalBackdrop = (props) => {
 	return (
 		<>
-			{props.modalState && (
-				<div className="backdrop" onClick={props.onClose}></div>
-			)}
+			<div className="backdrop" onClick={props.onClose}></div>
 		</>
 	);
 };
@@ -16,14 +14,12 @@ const ModalBackdrop = (props) => {
 const ModalOverlay = (props) => {
 	return (
 		<>
-			{props.modalState && (
-				<div className="modal">
-					<p>Please select a valid value.</p>
-					<button className="ok" onClick={props.onClose}>
-						OK
-					</button>
-				</div>
-			)}
+			<div className="modal">
+				<p>Please select a valid value.</p>
+				<button className="ok" onClick={props.onClose}>
+					OK
+				</button>
+			</div>
 		</>
 	);
 };
@@ -39,13 +35,17 @@ const Modal = () => {
 	};
 	return (
 		<>
-			{ReactDOM.createPortal(
-				<ModalBackdrop modalState={modalState} onClose={closeModalHandler} />,
-				document.getElementById("backdrop-root")
-			)}
-			{ReactDOM.createPortal(
-				<ModalOverlay modalState={modalState} onClose={closeModalHandler} />,
-				document.getElementById("overlay-root")
+			{modalState && (
+				<>
+					{ReactDOM.createPortal(
+						<ModalBackdrop onClose={closeModalHandler} />,
+						document.getElementById("backdrop-root")
+					)}
+					{ReactDOM.createPortal(
+						<ModalOverlay onClose={closeModalHandler} />,
+						document.getElementById("overlay-root")
+					)}
+				</>
 			)}
 		</>
 	);

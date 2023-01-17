@@ -20,6 +20,7 @@ const VideoContainer = () => {
 				<>
 					<h2>{songTitle}</h2>{" "}
 					<iframe
+						data-testid="video"
 						src={videoURL}
 						title="YouTube video player"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

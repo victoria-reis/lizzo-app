@@ -291,6 +291,7 @@ main .wrapper {
 
 main {
 	background-color: black;
+	min-height: 40vh;
 }
 
 .selectMessage {
@@ -431,7 +432,7 @@ footer {
 		height: calc(100vw / 2);
 	}
 
-	footer {
-		margin-top: 205px;
+	main {
+		min-height: 67vh;
 	}
 }

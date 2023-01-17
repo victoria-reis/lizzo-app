@@ -1,5 +1,7 @@
 import React from "react";
 import "./index.css";
+import { Provider } from "react-redux";
+import store from "./store";
 
 import Form from "./components/Form";
 import VideoContainer from "./components/VideoContainer";
@@ -8,7 +10,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
 	return (
-		<>
+		<Provider store={store}>
 			<header className="wrapper">
 				<div className="h1Container">
 					<h1>
@@ -24,7 +26,7 @@ const App = () => {
 			</main>
 			<Modal />
 			<Footer />
-		</>
+		</Provider>
 	);
 };
 
