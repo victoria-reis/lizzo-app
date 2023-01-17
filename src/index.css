@@ -398,6 +398,7 @@ footer {
 	iframe {
 		width: 90%;
 		height: calc(100vw / 2.65);
+		border: none;
 	}
 
 	.modal {
